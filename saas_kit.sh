@@ -29,7 +29,6 @@ python_packages_install() {
         echo "Python package erppeek deb is not available"
         echo "You can install it with --break-system-packages flag"
         echo "It can break some system dependencies if conflict arise"
-        prompt_erppeek_choice
         
         prompt_erppeek_choice() {
             echo "Do you want to install with --break-system-packages flag? (y/n): "
@@ -51,6 +50,7 @@ python_packages_install() {
                 ;;
             esac
         }
+        prompt_erppeek_choice
     else
         echo "Else"
         $odoo_python_pip_path install docker erppeek paramiko python-crontab
